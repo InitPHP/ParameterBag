@@ -14,13 +14,13 @@ composer require initphp/parameterbag
 
 ## Requirements
 
-- PHP 7.4 or higher
+- PHP 7.2 or later
 
 ## Usage
 
-```php 
+```php
 require_once "vendor/autoload.php";
-use \InitPHP\ParameterBag;
+use \InitPHP\ParameterBag\ParameterBag;
 
 $parameter = new ParameterBag($_GET);
 
@@ -28,42 +28,62 @@ $parameter = new ParameterBag($_GET);
 echo $parameter->get('user', null); // "muhametsafak"
 ```
 
+### Using nested arrays
+
+```php
+require_once "vendor/autoload.php";
+use \InitPHP\ParameterBag\ParameterBag;
+
+$data = [
+    'database'  => [
+        'dsn'           => 'mysql:host=localhost',
+        'username'      => 'root',
+        'password'      => '123456'
+    ]
+];
+
+$parameter = new ParameterBag($data, ['isMulti' => true, 'separator' => '.']);
+
+$parameter->get('database.username'); // "root" 
+$parameter->has('database.charset'); // false
+```
+
 ### Methods
 
 #### `has()`
 
-```php 
+```php
 public function has(string $key): bool;
 ```
 
 #### `get()`
 
-```php 
+```php
 public function get(string $key, mixed $default = null): mixed;
 ```
 
 #### `set()`
 
-```php 
-public function set(string $key, mixed $value): \InitPHP\ParameterBag;
+```php
+public function set(string $key, mixed $value): \InitPHP\ParameterBag\ParameterBagInterface;
 ```
 
 #### `remove()`
 
-```php 
-public function remove(string $key): \InitPHP\ParameterBag;
+```php
+public function remove(string ...$keys): \InitPHP\ParameterBag\ParameterBagInterface;
 ```
 
 #### `all()`
 
-```php 
+```php
 public function all(): array;
 ```
 
 #### `merge()`
 
-```php 
-public function merge(array|\InitPHP\ParameterBag $merge): \InitPHP\ParameterBag;
+```php
+public function merge(array|\InitPHP\ParameterBag\ParameterBagInterface ...$merge): \InitPHP\ParameterBag\ParameterBagInterface;
 ```
 
 ## Credits
@@ -72,4 +92,4 @@ public function merge(array|\InitPHP\ParameterBag $merge): \InitPHP\ParameterBag
 
 ## License
 
-Copyright &copy; 2022 - [MIT License](https://initphp.github.io/license.txt)
+Copyright &copy; 2022 - [MIT License](./LICENSE)
