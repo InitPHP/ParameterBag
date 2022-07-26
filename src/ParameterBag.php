@@ -7,7 +7,7 @@
  * @author     Muhammet ŞAFAK <info@muhammetsafak.com.tr>
  * @copyright  Copyright © 2022 InitPHP
  * @license    http://initphp.github.io/license.txt  MIT
- * @version    1.1
+ * @version    1.1.1
  * @link       https://www.muhammetsafak.com.tr
  */
 
@@ -228,7 +228,7 @@ class ParameterBag implements ParameterBagInterface
             if(is_array($row)){
                 $row = $this->arrayChangeKeyCaseLower($row);
             }
-            if($this->_PBOptions['isMulti'] !== FALSE){
+            if(is_string($row) && $this->_PBOptions['isMulti'] !== FALSE){
                 $row = trim($row, $this->_PBOptions['separator']);
             }
             return $row;
