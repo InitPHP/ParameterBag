@@ -7,7 +7,7 @@
  * @author     Muhammet ŞAFAK <info@muhammetsafak.com.tr>
  * @copyright  Copyright © 2022 InitPHP
  * @license    http://initphp.github.io/license.txt  MIT
- * @version    1.1.1
+ * @version    1.1.2
  * @link       https://www.muhammetsafak.com.tr
  */
 
@@ -32,6 +32,7 @@ use function is_string;
 use function is_bool;
 use function array_map;
 use function array_change_key_case;
+use function array_key_exists;
 
 class ParameterBag implements ParameterBagInterface
 {
@@ -43,6 +44,9 @@ class ParameterBag implements ParameterBagInterface
         'isMulti'       => false,
         'separator'     => '.',
     ];
+
+    /** @var array */
+    private $_PBCache = [];
 
     public function __construct(array $data = [], array $options = [])
     {
@@ -106,7 +110,7 @@ class ParameterBag implements ParameterBagInterface
         if($this->_PBOptions['isMulti'] && strpos($key, $this->_PBOptions['separator']) !== FALSE){
             return ($this->multiSubParameterGet($key) !== '__InitPHPP@r@m£t£rB@gN0tF0undV@lu€__');
         }
-        return isset($this->_PBStack[$key]);
+        return isset($this->_PBStack[$key]) || array_key_exists($key, $this->_PBStack);
     }
 
     /**
@@ -115,6 +119,9 @@ class ParameterBag implements ParameterBagInterface
     public function get(string $key, $default = null)
     {
         $key = $this->getKey($key);
+        if(isset($this->_PBCache[$key])){
+            return $this->_PBCache[$key];
+        }
         if($this->_PBOptions['isMulti'] !== FALSE && strpos($key, $this->_PBOptions['separator']) !== FALSE){
             $value = $this->multiSubParameterGet($key);
             return ($value !== '__InitPHPP@r@m£t£rB@gN0tF0undV@lu€__') ? $value : $default;
@@ -131,6 +138,7 @@ class ParameterBag implements ParameterBagInterface
         if(is_array($value)){
             $value = $this->arrayChangeKeyCaseLower($value);
         }
+        $this->_PBCache[$key] = $value;
         if($this->_PBOptions['isMulti'] !== FALSE && strpos($key, $this->_PBOptions['separator']) !== FALSE){
             $split = explode($this->_PBOptions['separator'], $key);
             $id = $split[0];
@@ -149,6 +157,9 @@ class ParameterBag implements ParameterBagInterface
     {
         foreach ($keys as $key) {
             $key = $this->getKey($key);
+            if(array_key_exists($key, $this->_PBCache)){
+                unset($this->_PBCache[$key]);
+            }
             if($this->_PBOptions['isMulti'] !== FALSE && strpos($key, $this->_PBOptions['separator']) !== FALSE){
                 $split = explode($this->_PBOptions['separator'], $key);
                 $id = $keys[0];
