@@ -159,7 +159,7 @@ interface ParameterBagInterface extends \ArrayAccess, \Countable, \IteratorAggre
      * @return $this
      *
      * @throws ParameterBagInvalidArgumentException If any argument is
-     *         neither an array nor a {@see ParameterBagInterface}.
+     *                                              neither an array nor a {@see ParameterBagInterface}.
      */
     public function merge(...$merge): self;
 }

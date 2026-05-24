@@ -14,7 +14,10 @@ return (new PhpCsFixer\Config())
         'declare_strict_types'                  => true,
         'array_syntax'                          => ['syntax' => 'short'],
         'no_unused_imports'                     => true,
-        'ordered_imports'                       => ['sort_algorithm' => 'alpha'],
+        'ordered_imports'                       => [
+            'sort_algorithm' => 'alpha',
+            'imports_order'  => ['class', 'function', 'const'],
+        ],
         'single_quote'                          => true,
         'trailing_comma_in_multiline'           => true,
         'no_trailing_whitespace'                => true,
