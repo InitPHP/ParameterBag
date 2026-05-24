@@ -120,7 +120,7 @@ class ParameterBag implements ParameterBagInterface
      *                                         - `caseInsensitive` (bool, default false)
      *
      * @throws ParameterBagInvalidArgumentException If $options contains
-     *         any unrecognised key.
+     *                                              any unrecognised key.
      */
     public function __construct(array $data = [], array $options = [])
     {
@@ -375,6 +375,7 @@ class ParameterBag implements ParameterBagInterface
      * {@see \ArrayAccess::offsetGet()} — delegates to {@see self::get()}.
      *
      * @param array-key $offset
+     *
      * @return mixed
      */
     #[\ReturnTypeWillChange]
@@ -478,6 +479,7 @@ class ParameterBag implements ParameterBagInterface
      * never modified.
      *
      * @param array<array-key, mixed> $array
+     *
      * @return array<array-key, mixed>
      */
     private function normalizeKeys(array $array): array
@@ -521,6 +523,7 @@ class ParameterBag implements ParameterBagInterface
      *
      * @param mixed                   $value
      * @param array<array-key, mixed> $parameters
+     *
      * @return array<array-key, mixed>
      */
     private function multiSubParameterSet(string $key, $value, array $parameters): array
@@ -547,6 +550,7 @@ class ParameterBag implements ParameterBagInterface
      * the rebuilt subtree.
      *
      * @param array<array-key, mixed> $parameters
+     *
      * @return array<array-key, mixed>
      */
     private function multiSubParameterRemove(string $key, array $parameters): array
