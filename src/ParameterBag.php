@@ -143,14 +143,15 @@ class ParameterBag implements ParameterBagInterface
     }
 
     /**
-     * @return array{isMulti: string, separator: string, data: array<array-key, mixed>}
+     * @return array{isMulti: string, separator: string, caseInsensitive: string, data: array<array-key, mixed>}
      */
     public function __debugInfo(): array
     {
         return [
-            'isMulti'   => $this->isMulti ? 'yes' : 'no',
-            'separator' => $this->separator,
-            'data'      => $this->all(),
+            'isMulti'         => $this->isMulti ? 'yes' : 'no',
+            'separator'       => $this->separator,
+            'caseInsensitive' => $this->caseInsensitive ? 'yes' : 'no',
+            'data'            => $this->all(),
         ];
     }
 

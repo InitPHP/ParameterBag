@@ -56,9 +56,10 @@ final class EdgeCasesTest extends TestCase
 
         self::assertSame(
             [
-                'isMulti'   => 'yes',
-                'separator' => '|',
-                'data'      => ['db' => ['user' => 'root']],
+                'isMulti'         => 'yes',
+                'separator'       => '|',
+                'caseInsensitive' => 'no',
+                'data'            => ['db' => ['user' => 'root']],
             ],
             $bag->__debugInfo()
         );
