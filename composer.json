@@ -1,11 +1,23 @@
 {
     "name": "initphp/parameterbag",
-    "description": "InitPHP Parameter Bag Library",
+    "description": "Single and multi-dimensional parameter bag with dot-path access for PHP.",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "parameter-bag",
+        "config",
+        "container",
+        "dot-notation",
+        "initphp"
+    ],
     "autoload": {
         "psr-4": {
             "InitPHP\\ParameterBag\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "InitPHP\\ParameterBag\\Tests\\": "tests/"
         }
     },
     "support": {
@@ -22,6 +34,21 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "php": ">=7.2"
+        "php": "^7.4 || ^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6",
+        "phpstan/phpstan": "^1.12",
+        "friendsofphp/php-cs-fixer": "^3.64"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test:coverage": "phpunit --coverage-html=build/coverage",
+        "analyse": "phpstan analyse",
+        "cs:check": "php-cs-fixer fix --dry-run --diff",
+        "cs:fix": "php-cs-fixer fix"
+    },
+    "config": {
+        "sort-packages": true
     }
 }
