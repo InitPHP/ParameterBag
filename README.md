@@ -3,7 +3,7 @@
 A small, dependency-free parameter container for PHP that handles both
 flat and nested (dotted-path) data with the same API.
 
-[![Designed & Maintained with Tan](https://www.muhammetsafak.com.tr/badges/designed-maintained-with-tan.svg)](https://www.muhammetsafak.com.tr/en/tan/)
+[![Designed & Maintained with Tan](https://muhammetsafak.com/badges/designed-maintained-with-tan.svg)](https://muhammetsafak.com/tan/)
 [![Latest Stable Version](https://poser.pugx.org/initphp/parameterbag/v)](https://packagist.org/packages/initphp/parameterbag)
 [![Total Downloads](https://poser.pugx.org/initphp/parameterbag/downloads)](https://packagist.org/packages/initphp/parameterbag)
 [![CI](https://github.com/InitPHP/ParameterBag/actions/workflows/ci.yml/badge.svg)](https://github.com/InitPHP/ParameterBag/actions/workflows/ci.yml)
@@ -158,7 +158,7 @@ A full migration guide lives at
 
 ## Credits
 
-- [Muhammet ŞAFAK](https://www.muhammetsafak.com.tr) <<info@muhammetsafak.com.tr>>
+- [Muhammet ŞAFAK](https://muhammetsafak.com) <<info@muhammetsafak.com>>
 
 ## License
 
