@@ -3,7 +3,7 @@
 /**
  * This file is part of the initphp/parameterbag package.
  *
- * (c) Muhammet ŞAFAK <info@muhammetsafak.com.tr>
+ * (c) Muhammet ŞAFAK <info@muhammetsafak.com>
  *
  * For the full copyright and license information, please view the
  * LICENSE file that was distributed with this source code.
