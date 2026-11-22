@@ -186,25 +186,25 @@ final class ReadOnlyBag implements ParameterBagInterface
 {
     public function __construct(private ParameterBagInterface $inner) {}
 
-    public function get(string $key, $default = null) { return $this->inner->get($key, $default); }
-    public function has(string $key): bool             { return $this->inner->has($key); }
-    public function all(): array                       { return $this->inner->all(); }
-    public function isEmpty(): bool                    { return $this->inner->isEmpty(); }
-    public function keys(): array                      { return $this->inner->keys(); }
-    public function values(): array                    { return $this->inner->values(); }
-    public function count(): int                       { return $this->inner->count(); }
-    public function getIterator(): \Traversable        { return $this->inner->getIterator(); }
+    public function get(string $key, $default = null)   { return $this->inner->get($key, $default); }
+    public function has(string $key): bool              { return $this->inner->has($key); }
+    public function all(): array                        { return $this->inner->all(); }
+    public function isEmpty(): bool                     { return $this->inner->isEmpty(); }
+    public function keys(): array                       { return $this->inner->keys(); }
+    public function values(): array                     { return $this->inner->values(); }
+    public function count(): int                        { return $this->inner->count(); }
+    public function getIterator(): \Traversable         { return $this->inner->getIterator(); }
     public function offsetExists(mixed $o): bool        { return $this->inner->offsetExists($o); }
-    public function offsetGet(mixed $o): mixed        { return $this->inner->offsetGet($o); }
+    public function offsetGet(mixed $o): mixed          { return $this->inner->offsetGet($o); }
 
-    public function set(string $key, $value): self     { throw new \LogicException('read-only'); }
-    public function remove(string ...$keys): self      { throw new \LogicException('read-only'); }
-    public function merge(...$merge): self             { throw new \LogicException('read-only'); }
-    public function replace(array $data): self         { throw new \LogicException('read-only'); }
-    public function clear(): void                      { throw new \LogicException('read-only'); }
-    public function close(): void                      { throw new \LogicException('read-only'); }
+    public function set(string $key, $value): self      { throw new \LogicException('read-only'); }
+    public function remove(string ...$keys): self       { throw new \LogicException('read-only'); }
+    public function merge(...$merge): self              { throw new \LogicException('read-only'); }
+    public function replace(array $data): self          { throw new \LogicException('read-only'); }
+    public function clear(): void                       { throw new \LogicException('read-only'); }
+    public function close(): void                       { throw new \LogicException('read-only'); }
     public function offsetSet(mixed $o, mixed $v): void { throw new \LogicException('read-only'); }
-    public function offsetUnset(mixed $o): void       { throw new \LogicException('read-only'); }
+    public function offsetUnset(mixed $o): void         { throw new \LogicException('read-only'); }
 }
 ```
 

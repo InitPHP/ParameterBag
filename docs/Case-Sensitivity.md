@@ -105,8 +105,12 @@ See the [Migration Guide](Migration-Guide.md) for the full v1 → v2 list.
 - **`isMulti`**: case-insensitive mode lower-cases keys at every
   depth, including the segments of a dotted path. `get('FOO.BAR')`
   still resolves against `['foo' => ['bar' => …]]`.
-- **`separator`**: unaffected. The separator string itself is not
-  lowercased; only the surrounding key characters are.
+- **`separator`**: the configured `separator` value is stored as given,
+  but `getKey()` lower-cases the whole incoming key, including any
+  letters inside the separator. With a letter-based separator such as
+  `'X'`, `get('aXb')` becomes `'axb'` and no longer splits. Use a
+  separator without letters (`'.'`, `'|'`, `'::'`) together with
+  `caseInsensitive`.
 - **`close()`**: resets `caseInsensitive` back to `false`. If you
   only want to empty the stack, use `clear()`.
 
