@@ -157,14 +157,13 @@ quickly finding the right name in IDEs and logs.
 
 ## PHP version
 
-| | v1 | v2.0.0 | After 2.0.0 (unreleased) |
+| | v1 | v2.0.0 | v3.0.0 |
 | --- | --- | --- | --- |
 | Minimum PHP (`composer.json`) | `>=7.2` | `^7.4 \|\| ^8.0` | `^8.2` |
 | CI matrix | n/a | 7.4, 8.0, 8.1, 8.2, 8.3, 8.4 | 8.2, 8.3, 8.4, 8.5 |
 
 The `^8.2` minimum
-is recorded in the CHANGELOG as a breaking change that has not been
-released yet.
+is recorded in the CHANGELOG as a breaking change of 3.0.0.
 
 ## Drop-in compatibility shim
 
