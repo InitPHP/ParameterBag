@@ -167,7 +167,7 @@ protected hooks, exception types, minimum PHP version) belongs in a
 major release. Private helpers and the static sentinel are
 implementation detail and may change in minor releases. The
 [CHANGELOG](https://github.com/InitPHP/ParameterBag/blob/main/CHANGELOG.md)
-lists what is pending under *Unreleased*.
+lists what changed in each release.
 
 ## Other
 
