@@ -94,19 +94,19 @@ foreach ($bag as $key => $value) { /* ... */ }
 
 | Method | Purpose | Docs |
 | --- | --- | --- |
-| `get(string $key, mixed $default = null): mixed` | Look up a value (dotted paths in multi mode). | [usage/basic-usage](docs/usage/basic-usage.md) |
-| `has(string $key): bool` | Existence check (null values count as present). | [usage/basic-usage](docs/usage/basic-usage.md) |
-| `set(string $key, mixed $value): self` | Assign or replace a value. | [usage/basic-usage](docs/usage/basic-usage.md) |
-| `remove(string ...$keys): self` | Delete one or more keys. | [usage/basic-usage](docs/usage/basic-usage.md) |
-| `merge(array\|ParameterBagInterface ...$payloads): self` | Shallow merge (flat) or recursive replace (multi). | [usage/merging](docs/usage/merging.md) |
-| `replace(array $data): self` | Swap the entire stack. | [api-reference](docs/api-reference.md) |
-| `all(): array` | Return the current stack as a plain array. | [api-reference](docs/api-reference.md) |
-| `keys(): array` / `values(): array` | Top-level keys / values in insertion order. | [api-reference](docs/api-reference.md) |
-| `count(): int` | Top-level entry count (also via `count($bag)`). | [usage/iteration-and-counting](docs/usage/iteration-and-counting.md) |
-| `getIterator(): ArrayIterator` | Iterates top-level entries. | [usage/iteration-and-counting](docs/usage/iteration-and-counting.md) |
-| `isEmpty(): bool` | True when the stack has no entries. | [api-reference](docs/api-reference.md) |
-| `clear(): void` | Empty the stack, keep options. | [api-reference](docs/api-reference.md) |
-| `close(): void` | Empty the stack and reset options to defaults. | [api-reference](docs/api-reference.md) |
+| `get(string $key, mixed $default = null): mixed` | Look up a value (dotted paths in multi mode). | [Basic Usage](docs/Basic-Usage.md) |
+| `has(string $key): bool` | Existence check (null values count as present). | [Basic Usage](docs/Basic-Usage.md) |
+| `set(string $key, mixed $value): self` | Assign or replace a value. | [Basic Usage](docs/Basic-Usage.md) |
+| `remove(string ...$keys): self` | Delete one or more keys. | [Basic Usage](docs/Basic-Usage.md) |
+| `merge(array\|ParameterBagInterface ...$payloads): self` | Shallow merge (flat) or recursive replace (multi). | [Merging](docs/Merging.md) |
+| `replace(array $data): self` | Swap the entire stack. | [API Reference](docs/API-Reference.md) |
+| `all(): array` | Return the current stack as a plain array. | [API Reference](docs/API-Reference.md) |
+| `keys(): array` / `values(): array` | Top-level keys / values in insertion order. | [API Reference](docs/API-Reference.md) |
+| `count(): int` | Top-level entry count (also via `count($bag)`). | [Iteration & Counting](docs/Iteration-And-Counting.md) |
+| `getIterator(): ArrayIterator` | Iterates top-level entries. | [Iteration & Counting](docs/Iteration-And-Counting.md) |
+| `isEmpty(): bool` | True when the stack has no entries. | [API Reference](docs/API-Reference.md) |
+| `clear(): void` | Empty the stack, keep options. | [API Reference](docs/API-Reference.md) |
+| `close(): void` | Empty the stack and reset options to defaults. | [API Reference](docs/API-Reference.md) |
 
 ## Configuration options
 
@@ -119,8 +119,8 @@ The constructor accepts a second array of options. Unknown keys raise
 | `separator` | `non-empty-string` | `'.'` | Delimiter for dotted paths. Ignored in flat mode. |
 | `caseInsensitive` | `bool` | `false` | When true, every key (constructor payload, set/get/has/remove arguments, merge input) is folded to lower-case. Matches the legacy v1 behaviour. |
 
-See [docs/configuration.md](docs/configuration.md) and
-[docs/usage/case-sensitivity.md](docs/usage/case-sensitivity.md).
+See [docs/Configuration.md](docs/Configuration.md) and
+[docs/Case-Sensitivity.md](docs/Case-Sensitivity.md).
 
 ## Exceptions
 
@@ -128,7 +128,7 @@ See [docs/configuration.md](docs/configuration.md) and
 | --- | --- |
 | `InitPHP\ParameterBag\Exception\ParameterBagInvalidArgumentException` | Unknown option key, non-array/non-ParameterBag argument to `merge()`, or `$bag[] = $v` ArrayAccess append. Extends `\InvalidArgumentException`. |
 
-See [docs/exceptions.md](docs/exceptions.md).
+See [docs/Exceptions.md](docs/Exceptions.md).
 
 ## Development
 
@@ -148,7 +148,7 @@ v2 introduces a small set of intentional behaviour changes (cache
 removed, `isMulti` auto-detect inverted, value-trim bug fixed,
 case-sensitive by default, strict option validation, new methods).
 A full migration guide lives at
-[docs/upgrading-from-v1.md](docs/upgrading-from-v1.md).
+[docs/Migration-Guide.md](docs/Migration-Guide.md).
 
 ## Contributing & Security
 
