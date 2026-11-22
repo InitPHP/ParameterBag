@@ -70,14 +70,14 @@ final class MergeTest extends TestCase
     {
         $bag = new ParameterBag(
             ['db' => ['user' => 'root']],
-            ['isMulti' => true]
+            ['isMulti' => true],
         );
 
         $bag->merge(['db' => ['pass' => 'secret']]);
 
         self::assertSame(
             ['db' => ['user' => 'root', 'pass' => 'secret']],
-            $bag->all()
+            $bag->all(),
         );
     }
 
@@ -85,14 +85,14 @@ final class MergeTest extends TestCase
     {
         $bag = new ParameterBag(
             ['db' => ['user' => 'root', 'pass' => 'old']],
-            ['isMulti' => true]
+            ['isMulti' => true],
         );
 
         $bag->merge(['db' => ['pass' => 'new']]);
 
         self::assertSame(
             ['db' => ['user' => 'root', 'pass' => 'new']],
-            $bag->all()
+            $bag->all(),
         );
     }
 
@@ -100,12 +100,12 @@ final class MergeTest extends TestCase
     {
         $bag = new ParameterBag(
             ['db' => ['user' => 'root']],
-            ['isMulti' => true]
+            ['isMulti' => true],
         );
 
         $bag->merge(
             ['db' => ['pass' => 'secret']],
-            ['cache' => ['driver' => 'redis']]
+            ['cache' => ['driver' => 'redis']],
         );
 
         self::assertSame(
@@ -113,7 +113,7 @@ final class MergeTest extends TestCase
                 'db'    => ['user' => 'root', 'pass' => 'secret'],
                 'cache' => ['driver' => 'redis'],
             ],
-            $bag->all()
+            $bag->all(),
         );
     }
 }

@@ -66,7 +66,7 @@ final class StdInterfacesTest extends TestCase
     {
         $bag = new ParameterBag(
             ['db' => ['user' => 'root']],
-            ['isMulti' => true]
+            ['isMulti' => true],
         );
 
         self::assertSame('root', $bag['db.user']);
@@ -103,7 +103,7 @@ final class StdInterfacesTest extends TestCase
     {
         $bag = new ParameterBag(
             ['db' => ['user' => 'root', 'pass' => 'x'], 'cache' => ['ttl' => 60]],
-            ['isMulti' => true]
+            ['isMulti' => true],
         );
 
         // count() reports top-level entries only.

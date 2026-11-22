@@ -49,7 +49,7 @@ final class RemoveTest extends TestCase
     {
         $bag = new ParameterBag(
             ['db' => ['user' => 'root', 'pass' => 'x']],
-            ['isMulti' => true]
+            ['isMulti' => true],
         );
 
         $bag->remove('db.pass');
@@ -74,7 +74,7 @@ final class RemoveTest extends TestCase
                 'db'    => ['user' => 'root', 'pass' => 'x'],
                 'cache' => ['ttl' => 60, 'driver' => 'redis'],
             ],
-            ['isMulti' => true]
+            ['isMulti' => true],
         );
 
         $bag->remove('db.pass', 'cache.ttl');
@@ -84,7 +84,7 @@ final class RemoveTest extends TestCase
                 'db'    => ['user' => 'root'],
                 'cache' => ['driver' => 'redis'],
             ],
-            $bag->all()
+            $bag->all(),
         );
     }
 }

@@ -36,7 +36,7 @@ final class CaseSensitivityTest extends TestCase
 
         self::assertSame(
             ['Database' => ['User' => 'root']],
-            $bag->all()
+            $bag->all(),
         );
         self::assertSame('root', $bag->get('Database.User'));
     }
@@ -56,12 +56,12 @@ final class CaseSensitivityTest extends TestCase
     {
         $bag = new ParameterBag(
             ['Database' => ['User' => 'root']],
-            ['caseInsensitive' => true]
+            ['caseInsensitive' => true],
         );
 
         self::assertSame(
             ['database' => ['user' => 'root']],
-            $bag->all()
+            $bag->all(),
         );
         self::assertSame('root', $bag->get('DATABASE.USER'));
     }
@@ -76,12 +76,12 @@ final class CaseSensitivityTest extends TestCase
     {
         $bag = new ParameterBag(
             ['DB' => ['Host' => 'localhost']],
-            ['isMulti' => true, 'separator' => '|', 'caseInsensitive' => true]
+            ['isMulti' => true, 'separator' => '|', 'caseInsensitive' => true],
         );
 
         self::assertSame(
             ['db' => ['host' => 'localhost']],
-            $bag->all()
+            $bag->all(),
         );
         self::assertSame('localhost', $bag->get('DB|Host'));
     }
