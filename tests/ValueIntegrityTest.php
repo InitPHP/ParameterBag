@@ -21,7 +21,7 @@ final class ValueIntegrityTest extends TestCase
     {
         $bag = new ParameterBag(
             ['db' => ['host' => '.example.com.']],
-            ['isMulti' => true, 'separator' => '.']
+            ['isMulti' => true, 'separator' => '.'],
         );
 
         self::assertSame('.example.com.', $bag->get('db.host'));
@@ -31,7 +31,7 @@ final class ValueIntegrityTest extends TestCase
     {
         $bag = new ParameterBag(
             ['greeting' => '.hello.'],
-            ['isMulti' => true, 'separator' => '.']
+            ['isMulti' => true, 'separator' => '.'],
         );
 
         self::assertSame('.hello.', $bag->get('greeting'));
@@ -49,7 +49,7 @@ final class ValueIntegrityTest extends TestCase
     {
         $bag = new ParameterBag(
             ['db' => ['host' => '|example.com|']],
-            ['isMulti' => true, 'separator' => '|']
+            ['isMulti' => true, 'separator' => '|'],
         );
 
         self::assertSame('|example.com|', $bag->get('db|host'));

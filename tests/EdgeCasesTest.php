@@ -20,7 +20,7 @@ final class EdgeCasesTest extends TestCase
     {
         $bag = new ParameterBag(
             ['db' => ['user' => 'root']],
-            ['isMulti' => true, 'separator' => '|', 'caseInsensitive' => true]
+            ['isMulti' => true, 'separator' => '|', 'caseInsensitive' => true],
         );
 
         $bag->close();
@@ -51,7 +51,7 @@ final class EdgeCasesTest extends TestCase
     {
         $bag = new ParameterBag(
             ['db' => ['user' => 'root']],
-            ['isMulti' => true, 'separator' => '|']
+            ['isMulti' => true, 'separator' => '|'],
         );
 
         self::assertSame(
@@ -61,7 +61,7 @@ final class EdgeCasesTest extends TestCase
                 'caseInsensitive' => 'no',
                 'data'            => ['db' => ['user' => 'root']],
             ],
-            $bag->__debugInfo()
+            $bag->__debugInfo(),
         );
     }
 
@@ -141,7 +141,7 @@ final class EdgeCasesTest extends TestCase
 
         self::assertSame(
             ['outer' => ['inner' => ['leaf' => 'v']]],
-            $bag->all()
+            $bag->all(),
         );
     }
 

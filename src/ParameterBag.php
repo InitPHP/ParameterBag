@@ -274,7 +274,7 @@ class ParameterBag implements ParameterBagInterface
             $this->stack[$id] = $this->multiSubParameterSet(
                 implode($this->separator, $split),
                 $value,
-                $this->arrayOrEmpty($this->stack[$id] ?? null)
+                $this->arrayOrEmpty($this->stack[$id] ?? null),
             );
 
             return $this;
@@ -297,7 +297,7 @@ class ParameterBag implements ParameterBagInterface
                 array_shift($split);
                 $this->stack[$id] = $this->multiSubParameterRemove(
                     implode($this->separator, $split),
-                    $this->arrayOrEmpty($this->stack[$id] ?? null)
+                    $this->arrayOrEmpty($this->stack[$id] ?? null),
                 );
                 continue;
             }
@@ -323,7 +323,7 @@ class ParameterBag implements ParameterBagInterface
             }
             if (!is_array($data)) {
                 throw new ParameterBagInvalidArgumentException(
-                    'Only an array or a ParameterBag object can be combined.'
+                    'Only an array or a ParameterBag object can be combined.',
                 );
             }
             if (empty($data)) {
@@ -396,7 +396,7 @@ class ParameterBag implements ParameterBagInterface
     {
         if ($offset === null) {
             throw new ParameterBagInvalidArgumentException(
-                'ParameterBag is a string-keyed structure; assignment without a key is not supported.'
+                'ParameterBag is a string-keyed structure; assignment without a key is not supported.',
             );
         }
         $this->set((string) $offset, $value);
@@ -443,7 +443,7 @@ class ParameterBag implements ParameterBagInterface
             throw new ParameterBagInvalidArgumentException(sprintf(
                 'Unknown ParameterBag option(s): %s. Known options: %s.',
                 implode(', ', $unknown),
-                implode(', ', self::KNOWN_OPTIONS)
+                implode(', ', self::KNOWN_OPTIONS),
             ));
         }
         if (isset($options['isMulti']) && is_bool($options['isMulti'])) {
@@ -535,7 +535,7 @@ class ParameterBag implements ParameterBagInterface
             $parameters[$id] = $this->multiSubParameterSet(
                 implode($this->separator, $keys),
                 $value,
-                $this->arrayOrEmpty($parameters[$id] ?? null)
+                $this->arrayOrEmpty($parameters[$id] ?? null),
             );
 
             return $parameters;
@@ -561,7 +561,7 @@ class ParameterBag implements ParameterBagInterface
             array_shift($keys);
             $parameters[$id] = $this->multiSubParameterRemove(
                 implode($this->separator, $keys),
-                $this->arrayOrEmpty($parameters[$id] ?? null)
+                $this->arrayOrEmpty($parameters[$id] ?? null),
             );
 
             return $parameters;

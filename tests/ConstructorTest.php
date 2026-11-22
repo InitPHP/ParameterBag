@@ -29,7 +29,7 @@ final class ConstructorTest extends TestCase
         self::assertSame('baz', $bag->get('foo.bar'));
         self::assertSame(
             ['user' => 'a', 'pass' => 'b', 'foo.bar' => 'baz'],
-            $bag->all()
+            $bag->all(),
         );
     }
 
@@ -49,7 +49,7 @@ final class ConstructorTest extends TestCase
     {
         $bag = new ParameterBag(
             ['user' => 'a', 'pass' => 'b'],
-            ['isMulti' => true]
+            ['isMulti' => true],
         );
 
         $bag->set('database.user', 'root');
@@ -61,7 +61,7 @@ final class ConstructorTest extends TestCase
     {
         $bag = new ParameterBag(
             ['database' => ['user' => 'root']],
-            ['isMulti' => false]
+            ['isMulti' => false],
         );
 
         // In flat mode 'database.user' is a single key, not a path,

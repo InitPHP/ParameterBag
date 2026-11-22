@@ -28,6 +28,4 @@ namespace InitPHP\ParameterBag\Exception;
  * Extends the SPL {@see \InvalidArgumentException} so catch blocks
  * written against either type continue to work.
  */
-class ParameterBagInvalidArgumentException extends \InvalidArgumentException
-{
-}
+class ParameterBagInvalidArgumentException extends \InvalidArgumentException {}
