@@ -45,7 +45,11 @@ use InitPHP\ParameterBag\ParameterBag;
 $bag = new ParameterBag($_GET);
 
 // GET /?user=alice
-echo $bag->get('user', 'guest'); // 'alice'
+$user = $bag->get('user', 'guest'); // 'alice'
+
+// The bag returns request data as-is (it can be an array, or contain markup).
+// Escape it for the context you print it in — here, HTML:
+echo htmlspecialchars(is_string($user) ? $user : 'guest', ENT_QUOTES, 'UTF-8');
 
 $bag->set('locale', 'en_US')->set('debug', true);
 $bag->has('debug');              // true
