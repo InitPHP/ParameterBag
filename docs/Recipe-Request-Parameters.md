@@ -148,8 +148,10 @@ $request->headers()->get('authorization');
 ## Common pitfalls
 
 - **Trusting input directly.** The bag is a transport, not a
-  validator. Cast / validate at the boundary that consumes the
-  value, not at the call site.
+  validator or an escaper. Cast / validate at the boundary that consumes the
+  value, not at the call site, and escape it for the output context (for
+  example `htmlspecialchars($value, ENT_QUOTES, 'UTF-8')` before it goes into
+  HTML). Never `echo` a raw query or form value into a page.
 - **`$_FILES`.** File uploads have an unusual structure
   (`name`, `tmp_name`, `error`, `size`, `type`, each themselves
   arrays for `multiple` inputs). A bag can carry the structure,
