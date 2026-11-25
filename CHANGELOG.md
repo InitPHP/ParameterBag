@@ -8,8 +8,8 @@ project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Documentation
 
-- The README example and the Request Parameters recipe escape a request value
-  before printing it into HTML.
+- The README example escapes a request value before printing it into HTML, and the
+  Request Parameters recipe tells you to escape it for the output context.
 
 ## [3.0.0] - 2026-11-22
 
