@@ -29,7 +29,7 @@ flat and nested (dotted-path) data with the same API.
 
 ## Requirements
 
-- PHP 8.2 or later (including 8.5)
+- PHP 8.2 or later (including 8.6)
 
 ## Installation
 
@@ -144,7 +144,7 @@ composer cs:check     # PHP-CS-Fixer dry-run
 composer cs:fix       # PHP-CS-Fixer apply
 ```
 
-CI runs the matrix across PHP 8.2, 8.3, 8.4, and 8.5.
+CI runs the matrix across PHP 8.2, 8.3, 8.4, 8.5, and 8.6.
 
 ## Upgrading from v1
 

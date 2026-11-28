@@ -62,7 +62,7 @@ $config->set('app.debug', true)->merge(['db' => ['pass' => 'secret']]);
 ## Package metadata
 
 - **License**: MIT
-- **Minimum PHP**: 8.2 (tested on 8.2 – 8.5)
+- **Minimum PHP**: 8.2 (tested on 8.2 – 8.6)
 - **Runtime dependencies**: none
 - **Packagist**: [`initphp/parameterbag`](https://packagist.org/packages/initphp/parameterbag)
 - **Source**: [github.com/InitPHP/ParameterBag](https://github.com/InitPHP/ParameterBag)
