@@ -142,7 +142,7 @@ The parent's strict validator only sees keys it recognises.
 ### Which PHP versions are supported?
 
 PHP 8.2 and later. `composer.json` requires `^8.2`, and CI runs the
-test matrix on 8.2, 8.3, 8.4 and 8.5. Releases up to and including
+test matrix on 8.2, 8.3, 8.4, 8.5 and 8.6. Releases up to and including
 2.0.0 also supported PHP 7.4 and 8.0 – 8.1.
 
 ### What's the PHPStan level?
